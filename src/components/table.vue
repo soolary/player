@@ -27,6 +27,15 @@ export default {
         formaTime(time) {
             return moment(time).format("mm:ss");
         }
+    },
+    methods: {
+        musicClick(id) {
+            if (this.type == "mv") {
+                this.$router.push("/playmv?mvid=" + id);
+            } else {
+                this.$router.push("/playmusic?musicid=" + id);
+            }
+        }
     }
 };
 </script>

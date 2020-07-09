@@ -4,6 +4,9 @@ import Vue from 'vue'
 import found from '../views/found.vue'
 import music from '../views/music'
 import mv from '../views/mv.vue'
+import playmv from '../views/playmv.vue'
+import playmusic from '../views/playmusic.vue'
+
 
 
 Vue.use(VueRouter);
@@ -18,6 +21,12 @@ let router = new VueRouter({
     }, {
         path: '/mv',
         component: mv
+    }, {
+        path: '/playmv',
+        component: playmv
+    }, {
+        path: '/playmusic',
+        component: playmusic
     }]
 
 })

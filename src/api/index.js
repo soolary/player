@@ -16,3 +16,29 @@ export function getNewsong() {
         url: `/personalized/newsong/?t=${Math.random() * 999}`
     })
 }
+
+export function searchMusic(params) {
+    return biu({
+        url: `/search?t=${Math.random() * 999}`,
+        params
+    })
+}
+export function getMv(params) {
+    return biu({
+        url: `/mv/all?t=${Math.random() * 999}`,
+        params
+    })
+}
+export function playMv(params) {
+    return biu({
+        url: `/mv/url?t=${Math.random() * 999}`,
+        params
+    })
+}
+export function mvInfo(params) {
+    return biu({
+        url: `/mv/detail?t=${Math.random() * 999}`,
+        params
+    })
+}
+
