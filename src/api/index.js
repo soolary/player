@@ -41,4 +41,16 @@ export function mvInfo(params) {
         params
     })
 }
+export function playMusic(params) {
+    return biu({
+        url: `/song/url?t=${Math.random() * 9999}`,
+        params
+    })
+}
+export function songInfo(params) {
+    return biu({
+        url: `song/detail?t=${Math.random() * 9999}`,
+        params
+    })
+}
 

@@ -12,7 +12,7 @@
                 <img v-if="item.picUrl" :src="item.picUrl" alt="">
                 <div>{{item.name}}</div>
             </td>
-            <td>{{item.song.artists[0].name}}</td>
+            <td>{{item.song.artists|arr}}</td>
             <td>{{item.song.album.name}}</td>
             <td>{{item.song.duration|formaTime}}</td>
         </tr>
@@ -26,6 +26,13 @@ export default {
     filters: {
         formaTime(time) {
             return moment(time).format("mm:ss");
+        },
+        arr(item) {
+            return item
+                .map(item2 => {
+                    return item2.name;
+                })
+                .join("&");
         }
     },
     methods: {
@@ -33,7 +40,7 @@ export default {
             if (this.type == "mv") {
                 this.$router.push("/playmv?mvid=" + id);
             } else {
-                this.$router.push("/playmusic?musicid=" + id);
+                this.$router.push("/playmusic?id=" + id);
             }
         }
     }
